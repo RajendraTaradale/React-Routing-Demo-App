@@ -41,5 +41,22 @@ const action={
 store.dispatch(action);
 console.log(store.getState());// output Rajendra Taradale
 
+--------------------------------------------
+Version 3
 
+import {createStore, combineReducers}  from 'redux';
 
+function one(state = [1,2,3,4,5],action){
+    return state
+}
+
+function two(state = { name : 'raj'},action){
+    return state
+}
+
+const allreducers= combineReducers({
+    digit:one,
+    name:two
+})
+
+const store=createStore(allreducers);
